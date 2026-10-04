@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07111f">
+  <meta name="description" content="Digital business card for Katerina Vitanova, co-founder of the Foundation Institute for Socio-Economic Development.">
+  <title>Katerina Vitanova | Digital Business Card</title>
+  <style>
+    :root { color-scheme: dark; --bg:#252b1c; --panel:#3d482b; --cyan:#f2edda; --white:#f7f2e4; --muted:#d5d0be; }
+    * { box-sizing: border-box; }
+    body { margin:0; min-height:100vh; padding:28px 16px; display:grid; place-items:center; font-family:Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color:var(--white); background:radial-gradient(ellipse at 50% 0%, #58663b 0%, #343d27 38%, var(--bg) 78%); }
+    .card { width:min(100%, 510px); overflow:hidden; position:relative; border:1px solid rgba(239,232,207,.34); border-radius:28px; padding:34px 26px 24px; background:linear-gradient(155deg, rgba(15,34,54,.97), rgba(7,17,31,.98) 72%); box-shadow:0 24px 80px rgba(0,0,0,.42), 0 0 50px rgba(235,226,196,.09); }
+    .card::before { content:""; position:absolute; left:26px; right:26px; top:0; height:2px; background:linear-gradient(90deg, transparent, var(--cyan), transparent); }
+    .brand { text-align:center; margin-bottom:30px; }
+    .brand-name { font-size:19px; font-weight:800; letter-spacing:.16em; }
+    .brand-name span { color:var(--cyan); }
+    .brand-sub { margin-top:7px; color:var(--muted); font-size:10px; letter-spacing:.19em; text-transform:uppercase; }
+    .eyebrow { color:var(--cyan); font-size:11px; font-weight:700; letter-spacing:.2em; text-align:center; text-transform:uppercase; }
+    h1 { margin:9px 0 10px; text-align:center; font-size:clamp(30px, 8vw, 40px); line-height:1.1; letter-spacing:-.04em; }
+    .role { text-align:center; color:#dce9f4; font-size:14px; line-height:1.6; }
+    .rule { width:58px; height:2px; margin:21px auto; background:var(--cyan); border-radius:9px; box-shadow:0 0 16px rgba(242,237,218,.35); }
+    .credentials { display:grid; gap:10px; margin:0 0 24px; }
+    .credential { padding:13px 15px; border:1px solid rgba(238,232,212,.18); border-radius:14px; background:rgba(255,255,255,.035); color:#d8e4ee; font-size:13px; line-height:1.5; }
+    .credential strong { display:block; margin-bottom:2px; color:var(--white); font-size:13px; }
+    .save { width:100%; min-height:62px; display:flex; align-items:center; justify-content:space-between; gap:12px; padding:13px 17px; border:0; border-radius:16px; color:#252b1c; background:linear-gradient(110deg, #eee8d4, #d8d1b8); font:inherit; font-weight:800; text-align:left; cursor:pointer; box-shadow:0 8px 24px rgba(15,20,10,.23); }
+    .save small { display:block; margin-top:3px; font-size:11px; font-weight:500; opacity:.78; }
+    .save .arrow { font-size:21px; }
+    .contacts { display:grid; grid-template-columns:1fr; gap:10px; margin-top:13px; }
+    .contact { display:flex; align-items:center; gap:12px; min-height:62px; padding:12px 14px; color:var(--white); text-decoration:none; border:1px solid rgba(238,232,212,.2); border-radius:14px; background:rgba(255,255,255,.035); transition:border-color .18s, transform .18s, background .18s; }
+    .contact:hover, .contact:focus-visible { border-color:rgba(238,232,212,.58); background:rgba(238,232,212,.09); transform:translateY(-1px); outline:none; }
+    .icon { width:34px; height:34px; flex:0 0 34px; display:grid; place-items:center; border-radius:11px; color:var(--cyan); background:rgba(238,232,212,.1); font-size:16px; }
+    .contact-label { display:block; color:var(--muted); font-size:10px; font-weight:700; letter-spacing:.13em; text-transform:uppercase; }
+    .contact-value { display:block; margin-top:3px; color:#edf5fb; font-size:13px; overflow-wrap:anywhere; }
+    .location { margin-top:10px; padding:12px 14px; text-align:center; color:var(--muted); font-size:12px; }
+    .footer { margin-top:17px; padding-top:17px; border-top:1px solid rgba(238,232,212,.17); text-align:center; color:#8295a8; font-size:10px; letter-spacing:.1em; text-transform:uppercase; }
+    @media (min-width:460px) { .contacts { grid-template-columns:1fr 1fr; } .contact:last-child { grid-column:1 / -1; } }
+    @media (max-width:360px) { .card { padding:29px 18px 21px; border-radius:22px; } }
+  </style>
+</head>
+<body>
+  <main class="card">
+    <header class="brand" aria-label="Foundation Institute for Socio-Economic Development">
+      <div class="brand-name">ACADEMIA <span>ABC</span></div>
+      <div class="brand-sub">Foundation Institute for Socio-Economic Development</div>
+    </header>
+    <div class="eyebrow">Connect with</div>
+    <h1>Katerina Vitanova</h1>
+    <div class="role">Co-Founder <span aria-hidden="true">|</span> Health &amp; Social Development</div>
+    <div class="rule" aria-hidden="true"></div>
+    <section class="credentials" aria-label="Professional qualifications">
+      <div class="credential"><strong>Physiotherapist</strong>Graduate Physiotherapist</div>
+      <div class="credential"><strong>Traditional Chinese Medicine</strong>Specialist</div>
+      <div class="credential"><strong>Permanent Court Translator</strong>Italian ↔ Macedonian</div>
+    </section>
+    <button class="save" id="saveContact" type="button">
+      <span>Save to Contacts<small>Add Katerina's details to your phone</small></span><span class="arrow" aria-hidden="true">↓</span>
+    </button>
+    <nav class="contacts" aria-label="Contact Katerina">
+      <a class="contact" href="tel:+38978969802"><span class="icon" aria-hidden="true">☎</span><span><span class="contact-label">Call</span><span class="contact-value">+389 78 969 802</span></span></a>
+      <a class="contact" href="mailto:vitanovakaterina8@gmail.com"><span class="icon" aria-hidden="true">✉</span><span><span class="contact-label">Email</span><span class="contact-value">vitanovakaterina8@gmail.com</span></span></a>
+      <div class="contact"><span class="icon" aria-hidden="true">⌖</span><span><span class="contact-label">Location</span><span class="contact-value">Strumica, North Macedonia</span></span></div>
+    </nav>
+    <div class="footer">People · Ideas · Opportunities · Lasting Impact</div>
+  </main>
+  <script>
+    document.getElementById('saveContact').addEventListener('click', () => {
+      const vcard = [
+        'BEGIN:VCARD', 'VERSION:3.0', 'N:Vitanova;Katerina;;;', 'FN:Katerina Vitanova',
+        'ORG:Foundation Institute for Socio-Economic Development Academia ABC',
+        'TITLE:Co-Founder | Health & Social Development',
+        'TEL;TYPE=CELL,VOICE:+38978969802', 'EMAIL;TYPE=INTERNET:vitanovakaterina8@gmail.com',
+        'ADR;TYPE=WORK:;;Strumica;;;North Macedonia',
+        'NOTE:Graduate Physiotherapist; Specialist in Traditional Chinese Medicine; Permanent Court Translator (Italian to Macedonian and Macedonian to Italian)',
+        'END:VCARD'
+      ].join('\r\n');
+      const blob = new Blob([vcard], {type:'text/vcard;charset=utf-8'});
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement('a'); link.href = url; link.download = 'Katerina-Vitanova.vcf';
+      document.body.appendChild(link); link.click(); link.remove(); URL.revokeObjectURL(url);
+    });
+  </script>
+</body>
+</html>
